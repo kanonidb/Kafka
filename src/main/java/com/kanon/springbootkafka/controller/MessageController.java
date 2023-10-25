@@ -27,12 +27,6 @@ public class MessageController {
 		return ResponseEntity.ok("Message sent to the topic");
 	}
 
-	@GetMapping("/publish-group")
-	public ResponseEntity<String>publishGroup(@RequestParam("message") String message){
-		
-		kafkaProducer.sendMessage(message);
-		return ResponseEntity.ok("Message sent to the topic");
-	}
 
 
 
