@@ -28,6 +28,18 @@ public class MessageController {
 	}
 
 
-
+	@GetMapping("/publish/1")
+	public ResponseEntity<String>publish1(@RequestParam("message") String message){
+		
+		kafkaProducer.sendMessage(message);
+		return ResponseEntity.ok("Message sent to the topic");
+	}	
+	
+	@GetMapping("/publish/2")
+	public ResponseEntity<String>publish2(@RequestParam("message") String message){
+		
+		kafkaProducer.sendMessage(message);
+		return ResponseEntity.ok("Message sent to the topic");
+	}
 
 }
